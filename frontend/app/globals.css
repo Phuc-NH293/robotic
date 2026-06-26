@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
   color-scheme: dark;
@@ -16,8 +16,8 @@
   --red: #ff6969;
   --amber: #f1c75b;
   --blue: #70a7ff;
-  --font: "Manrope", sans-serif;
-  --display: "Space Grotesk", sans-serif;
+  --font: "Inter", sans-serif;
+  --display: "Inter", sans-serif;
 }
 
 * { box-sizing: border-box; }
