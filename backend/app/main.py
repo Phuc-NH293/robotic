@@ -87,9 +87,9 @@ def dashboard_stats(_: dict = Depends(current_user)):
         types = connection.execute(
             """SELECT
                 CASE
-                    WHEN defect_type LIKE '%nứt%' THEN 'Nứt / Rạn'
-                    WHEN defect_type LIKE '%bề mặt%' OR defect_type LIKE '%Xước%' OR defect_type LIKE '%Lõm%' THEN 'Bề mặt'
-                    WHEN defect_type LIKE '%vị trí%' THEN 'Sai vị trí'
+                    WHEN defect_type LIKE '%nứt%' THEN 'Nứt bề mặt'
+                    WHEN defect_type LIKE '%phẳng%' OR defect_type LIKE '%gồ ghề%' OR defect_type LIKE '%lõm%' THEN 'Độ phẳng lệch'
+                    WHEN defect_type LIKE '%tróc%' OR defect_type LIKE '%mốc%' OR defect_type LIKE '%rỗ%' OR defect_type LIKE '%bọt%' THEN 'Bề mặt hoàn thiện'
                     ELSE 'Khác'
                 END AS category, COUNT(*) AS count
                FROM defects GROUP BY category"""

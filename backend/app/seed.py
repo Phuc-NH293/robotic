@@ -21,14 +21,14 @@ def seed_database() -> None:
 
         now = datetime.now(timezone.utc)
         reports = [
-            ("QC-260622-0842", "Khung máy A12", 0, "Cell 01", "fail", "Phúc N.", "ISO 5817-B", 41.8, 25, 98.4),
-            ("QC-260622-0841", "Mối hàn W08", 7, "Cell 02", "pass", "AI Auto", "ISO 5817-B", 39.2, 25, 99.1),
-            ("QC-260622-0840", "Vỏ động cơ M24", 14, "Cell 01", "review", "Chưa duyệt", "Internal QC v2.4", 43.7, 25, 91.7),
-            ("QC-260622-0839", "Khung máy A12", 36, "Cell 03", "pass", "Minh T.", "ISO 5817-B", 40.5, 25, 99.3),
-            ("QC-260622-0838", "Vỏ động cơ M24", 49, "Cell 02", "fail", "Lan H.", "Internal QC v2.4", 44.1, 25, 97.2),
-            ("QC-260622-0837", "Mối hàn W08", 62, "Cell 01", "pass", "AI Auto", "ISO 5817-C", 38.9, 25, 98.8),
-            ("QC-260622-0836", "Khung máy A12", 75, "Cell 03", "pass", "Phúc N.", "ISO 5817-B", 42.0, 25, 99.0),
-            ("QC-260622-0835", "Vỏ động cơ M24", 88, "Cell 02", "review", "Chưa duyệt", "Internal QC v2.4", 45.3, 25, 89.5),
+            ("QC-260622-0842", "Tường phòng khách A102", 0, "Robot WallScan-01", "fail", "Phúc N.", "TCVN 9377:2012", 41.8, 25, 98.4),
+            ("QC-260622-0841", "Tường hành lang tầng 2", 7, "Robot WallScan-02", "pass", "AI Auto", "TCVN 9377:2012", 39.2, 25, 99.1),
+            ("QC-260622-0840", "Cột bê tông sảnh chính", 14, "Robot WallScan-01", "review", "Chưa duyệt", "TCVN 9377:2012", 43.7, 25, 91.7),
+            ("QC-260622-0839", "Tường phòng ngủ B204", 36, "Robot WallScan-02", "pass", "Minh T.", "TCVN 9377:2012", 40.5, 25, 99.3),
+            ("QC-260622-0838", "Trần thạch cao sảnh phụ", 49, "Robot WallScan-01", "fail", "Lan H.", "TCVN 9377:2012", 44.1, 25, 97.2),
+            ("QC-260622-0837", "Tường bếp căn hộ C305", 62, "Robot WallScan-02", "pass", "AI Auto", "TCVN 9377:2012", 38.9, 25, 98.8),
+            ("QC-260622-0836", "Tường phòng khách A102", 75, "Robot WallScan-01", "pass", "Phúc N.", "TCVN 9377:2012", 42.0, 25, 99.0),
+            ("QC-260622-0835", "Tường hành lang tầng 3", 88, "Robot WallScan-02", "review", "Chưa duyệt", "TCVN 9377:2012", 45.3, 25, 89.5),
         ]
         connection.executemany(
             """INSERT INTO reports
@@ -41,12 +41,12 @@ def seed_database() -> None:
             """INSERT INTO defects (report_id, defect_type, location, measurement, confidence, severity)
                VALUES (?, ?, ?, ?, ?, ?)""",
             [
-                ("QC-260622-0842", "Vết nứt vi mô", "Điểm P-08 · Mối hàn bên trái", "0.82 mm", 98.4, "high"),
-                ("QC-260622-0842", "Rỗ bề mặt", "Điểm P-14 · Cạnh dưới", "1.24 mm", 96.2, "medium"),
-                ("QC-260622-0840", "Sai lệch vị trí", "Điểm P-17 · Lỗ bắt vít", "0.48 mm", 91.7, "medium"),
-                ("QC-260622-0838", "Xước bề mặt", "Điểm P-03 · Mặt trước", "4.10 mm", 98.1, "high"),
-                ("QC-260622-0838", "Lõm bề mặt", "Điểm P-11 · Cạnh phải", "1.70 mm", 96.4, "medium"),
-                ("QC-260622-0838", "Thiếu lớp phủ", "Điểm P-19 · Mặt sau", "2.30 mm", 97.2, "high"),
-                ("QC-260622-0835", "Khác màu sơn", "Điểm P-05 · Mặt trên", "ΔE 2.8", 89.5, "low"),
+                ("QC-260622-0842", "Nứt chân chim", "Mảng tường phía Tây · Cao 1.5m", "Rộng 0.8 mm", 98.4, "high"),
+                ("QC-260622-0842", "Rỗ bề mặt trát", "Gần ổ cắm điện · Cao 0.5m", "Sâu 2.4 mm", 96.2, "medium"),
+                ("QC-260622-0840", "Độ phẳng lệch chuẩn", "Góc tường giao cột · Cao 1.8m", "Lệch 4.8 mm", 91.7, "medium"),
+                ("QC-260622-0838", "Bong tróc sơn lót", "Góc trần thạch cao phía Đông", "Diện tích 45 cm²", 98.1, "high"),
+                ("QC-260622-0838", "Gồ ghề bề mặt", "Mảng trần trung tâm", "Lồi 1.7 mm", 96.4, "medium"),
+                ("QC-260622-0838", "Ẩm mốc bề mặt", "Mảng trần góc nhà vệ sinh", "Diện tích 120 cm²", 97.2, "high"),
+                ("QC-260622-0835", "Bọt khí sơn bả", "Mảng tường sát cửa sổ", "Đường kính 3.5 mm", 89.5, "low"),
             ],
         )

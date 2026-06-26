@@ -11,7 +11,7 @@ const nav = [
   { href: "/reports", icon: "▤", label: "Báo cáo kiểm tra" },
   { href: "/analytics", icon: "⌁", label: "Phân tích lỗi" },
   { href: "/robots", icon: "⌘", label: "Robot & Camera" },
-  { href: "/products", icon: "◇", label: "Sản phẩm" },
+  { href: "/products", icon: "◇", label: "Hạng mục quét" },
   { href: "/standards", icon: "✓", label: "Tiêu chuẩn QC" },
 ];
 
@@ -41,8 +41,8 @@ export function AppShell({ children, title }: { children: React.ReactNode; title
       <aside className={`sidebar ${open ? "open" : ""}`}>
         <Logo />
         <div className="facility">
-          <div className="facility-icon">F1</div>
-          <div><small>NHÀ MÁY</small><strong>Factory Alpha</strong></div><span>⌄</span>
+          <div className="facility-icon">L1</div>
+          <div><small>CÔNG TRÌNH</small><strong>Landmark Tower</strong></div><span>⌄</span>
         </div>
         <nav>
           <p className="nav-label">TỔNG QUAN</p>
@@ -65,7 +65,7 @@ export function AppShell({ children, title }: { children: React.ReactNode; title
         <div className="sidebar-bottom">
           <div className="robot-health">
             <div className="health-head"><span>TRẠNG THÁI HỆ THỐNG</span><b>ONLINE</b></div>
-            <div className="health-row"><span>Robot Cell 01</span><strong>Đang quét</strong></div>
+            <div className="health-row"><span>Robot WallScan-01</span><strong>Đang quét</strong></div>
             <div className="progress"><i /></div><small>Chu kỳ hiện tại · 72%</small>
           </div>
           <button className="user-card" onClick={logout}>
@@ -77,7 +77,7 @@ export function AppShell({ children, title }: { children: React.ReactNode; title
       <main className="main">
         <header className="topbar">
           <button className="mobile-menu" onClick={() => setOpen(!open)}>☰</button>
-          <div className="breadcrumb"><span>Factory Alpha</span><i>/</i><strong>{title}</strong></div>
+          <div className="breadcrumb"><span>Landmark Tower</span><i>/</i><strong>{title}</strong></div>
           <div className="top-actions">
             <button className="icon-button" title="Tìm kiếm">⌕</button>
             <button className="icon-button notification" title="Thông báo">♢<i /></button>

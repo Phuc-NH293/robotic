@@ -1,12 +1,12 @@
-# Inspectra — Robot Vision Quality Control
+# Inspectra — Wall Surface Quality Control
 
-Nền tảng web quản lý kiểm tra chất lượng tự động bằng robot và AI thị giác.
+Nền tảng web quản lý kiểm tra lỗi bề mặt tường tự động bằng robot và AI thị giác trong thi công công trình.
 
 ## Kiến trúc
 
 - `frontend/`: Next.js 16, React 19, TypeScript.
 - `backend/`: FastAPI, JWT authentication, SQLite.
-- Có đăng nhập, phân quyền, dashboard, báo cáo, duyệt kết quả, tạo lượt kiểm tra và quản lý người dùng.
+- Có đăng nhập, phân quyền, dashboard, báo cáo, duyệt kết quả, tạo lượt kiểm tra (tường/trần) và quản lý người dùng.
 - OpenAPI có tại `http://localhost:8000/docs`.
 
 ## Chạy development
